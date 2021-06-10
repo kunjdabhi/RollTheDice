@@ -11,7 +11,7 @@ const playerTwo = document.querySelector('.player-2');
 const rulemodal = document.querySelector('.rulesmodal')
 const overlay = document.querySelector('.overlay')
 const close = document.getElementById('close');
-const winmodal = document.querySelector('.winmodal')
+const winmodal = document.querySelector('.winnerPlayer');
 let playerOneCurrScore = document.getElementById("currentScore1");
 let playerTwoCurrScore = document.getElementById("currentScore2");
 let playerOneTotalScore = document.getElementById("displayScore1")
@@ -31,11 +31,9 @@ rollBtn.addEventListener('click', () => {
 
             currScore[0] += number;
 
-            if (score[0] >= 30) {
-                playerOneCurrScore.textContent = "You Won";
-            } else {
-                playerOneCurrScore.textContent = `${currScore[0]}`
-            }
+
+            playerOneCurrScore.textContent = `${currScore[0]}`
+
 
         }
         if (number === 1) {
@@ -54,11 +52,9 @@ rollBtn.addEventListener('click', () => {
 
             currScore[1] += number;
 
-            if (score[1] >= 30) {
-                playerTwoCurrScore.textContent = "You Won";
-            } else {
-                playerTwoCurrScore.textContent = `${currScore[1]}`;
-            }
+
+            playerTwoCurrScore.textContent = `${currScore[1]}`;
+
 
         }
         if (number === 1) {
@@ -67,7 +63,7 @@ rollBtn.addEventListener('click', () => {
             playerTwoCurrScore.textContent = 0;
             playerTwoTotalScore.textContent = 0;
             currScore[1] = 0;
-            score[0] = 0;
+            score[1] = 0;
         }
 
     }
@@ -83,7 +79,8 @@ holdBtn.addEventListener('click', () => {
         playerOneCurrScore.textContent = "0";
         currScore[0] = 0;
         if (score[0] >= 30) {
-            playerOneCurrScore.textContent = "You Won"
+            playerOneCurrScore.textContent = "You Won :D";
+
         }
     } else {
         score[1] += currScore[1];
@@ -94,8 +91,8 @@ holdBtn.addEventListener('click', () => {
         playerTwoCurrScore.textContent = "0";
         currScore[1] = 0;
         if (score[1] >= 30) {
-            winmodal.classList.add('modal-active');
-            overlay.classList.add('overlay-active');
+            playerTwoCurrScore.textContent = "You Won :D";
+
         }
 
     }
@@ -130,6 +127,8 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('overlay-active');
 
 })
+
+
 
 
 

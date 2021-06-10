@@ -37,12 +37,7 @@ img {
   flex-direction: column;
   border-radius: 8px 8px 8px 8px;
 }
-@media screen and (max-width: 400px) {
-  .container {
-    width: 80%;
-    height: 400px;
-  }
-}
+
 .btn {
   cursor: pointer;
   padding: 10px;
@@ -54,12 +49,7 @@ img {
   background-color: rgb(25, 84, 123);
   box-shadow: 1px 2px 30px -10px rgba(0, 0, 0, 0.6);
 }
-@media screen and (max-width: 400px) {
-  .btn {
-    padding: 4px;
-    font-size: 0.9rem;
-  }
-}
+
 .items {
   position: absolute;
   top: 0;
@@ -189,7 +179,7 @@ img {
 }
 
 .overlay-active {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
@@ -197,7 +187,8 @@ img {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 2;
 }
-.winmodal {
+
+.winnerPlayer {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -206,15 +197,18 @@ img {
   color: rgb(255, 216, 155);
   border-radius: 12px;
   padding: 20px;
-  z-index: 9;
-  font-size: 4rem;
-  width: 500px;
-  transform: scale(0);
+  font-size: 3rem;
   text-align: center;
-  box-shadow: 2px 6px 30px -10px rgba(0, 0, 0, 0.3);
+  transform: scale(0);
+  z-index: 10;
+  box-shadow: 2px 6px 30px -10px rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (max-width: 600px) {
+  .container {
+    width: 80%;
+    height: 400px;
+  }
   .players h1 {
     font-size: 1rem;
   }
@@ -222,7 +216,7 @@ img {
     margin-top: 12rem;
     font-size: 1rem;
     width: 6rem;
-    margin-left: 2rem;
+    margin-right: -3rem;
   }
   .rulesmodal {
     width: 200px;
@@ -251,11 +245,35 @@ img {
     width: 50px;
     height: auto;
   }
-  .winmodal {
-    font-size: 1.5rem;
-    width: 150px;
+  .winnerPlayer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(25, 84, 123);
+    color: rgb(255, 216, 155);
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 1rem;
+    text-align: center;
     transform: scale(0);
-    margin-left: -4.8rem;
-    box-shadow: 2px 6px 30px -10px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    margin-left: -5rem;
+    box-shadow: 2px 6px 30px -10px rgba(0, 0, 0, 0.8);
+  }
+  .modal-active {
+    transform: scale(1);
+  }
+  .btn {
+    padding: 4px;
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .currentScore {
+    margin-top: 12rem;
+    font-size: 1rem;
+    width: 5.5rem;
+    margin-left: 0.5rem;
   }
 }
