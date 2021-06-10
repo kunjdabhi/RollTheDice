@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(255, 216, 155);
+  background: -webkit-linear-gradient(to right, #19547b, #ffd89b);
+  background: linear-gradient(to right, rgb(25, 84, 123), #ffd89b);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+img {
+  width: 70px;
+  height: auto;
+}
+.dice {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10rem;
+}
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5rem auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 1px 2px 30px -10px rgba(0, 0, 0, 0.3);
+  /* border-radius: 8px; */
+  width: 700px;
+  height: 500px;
+  flex-direction: column;
+  border-radius: 8px 8px 8px 8px;
+}
+@media screen and (max-width: 400px) {
+  .container {
+    width: 80%;
+    height: 400px;
+  }
+}
+.btn {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1rem;
+  color: rgb(255, 216, 155);
+  font-weight: bolder;
+  background-color: rgb(25, 84, 123);
+  box-shadow: 1px 2px 30px -10px rgba(0, 0, 0, 0.6);
+}
+@media screen and (max-width: 400px) {
+  .btn {
+    padding: 4px;
+    font-size: 0.9rem;
+  }
+}
+.items {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+.players {
+  display: flex;
+}
+.players h1,
+.paleyes span {
+  z-index: 1;
+}
+.player-1 {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  text-align: center;
+  height: 100%;
+  width: 50%;
+}
+.player-1 h1 {
+  margin-top: 3rem;
+  color: rgb(25, 84, 123);
+}
+#displayScore1 {
+  font-size: 3rem;
+  color: rgb(25, 84, 123);
+}
+#displayScore2 {
+  font-size: 3rem;
+  color: rgb(25, 84, 123);
+}
+
+.currentScore {
+  margin-top: 12rem;
+  font-size: 1.5rem;
+  background-color: rgba(25, 84, 123);
+  border-radius: 8px;
+  width: 9rem;
+  margin-left: 6rem;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.currentScore :nth-child(1) {
+  margin-bottom: 1rem;
+}
+.player-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  height: 100%;
+  width: 50%;
+}
+.player-2 h1 {
+  margin-top: 3rem;
+  color: rgb(25, 84, 123);
+}
+#newGame {
+  margin-top: 3rem;
+}
+
+#roll {
+  margin-top: 16.5rem;
+}
+#hold {
+  margin-top: 1rem;
+}
+#rules {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  font-weight: bold;
+  background-color: rgb(255, 216, 155);
+  color: rgb(25, 84, 123);
+}
+.active-player {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 1px 2px 30px -10px rgba(0, 0, 0, 0.3);
+  transition: all 500ms ease-in-out;
+}
+
+.rulesmodal {
+  position: fixed;
+  background-color: #fff;
+  width: 400px;
+  z-index: 10;
+  color: black;
+  border-radius: 12px;
+  box-shadow: 1px 2px 30px -10px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  transform: scale(0);
+  transition: all 200ms ease-in-out;
+  margin-right: 5rem;
+}
+
+.rulesmodal ul li {
+  list-style: none;
+}
+.rulesmodal .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  border-bottom: 2px solid black;
+  margin-bottom: 0.3rem;
+  padding: 5px;
+}
+.modalcontent {
+  padding: 5px 15px;
+  font-weight: 500;
+}
+
+.rulesmodal .header :nth-child(2) {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.modal-active {
+  transform: scale(1);
+}
+
+.overlay-active {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+.winmodal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(25, 84, 123);
+  color: rgb(255, 216, 155);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 9;
+  font-size: 4rem;
+  width: 500px;
+  transform: scale(0);
+  text-align: center;
+  box-shadow: 2px 6px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 400px) {
+  .players h1 {
+    font-size: 1rem;
+  }
+  .currentScore {
+    margin-top: 12rem;
+    font-size: 1rem;
+    width: 6rem;
+    margin-left: 2rem;
+  }
+  .rulesmodal {
+    width: 200px;
+    margin-left: 5rem;
+  }
+  #newGame {
+    position: absolute;
+    top: 23rem;
+  }
+
+  #roll {
+    margin-top: 13.5rem;
+  }
+  #hold {
+    margin-top: 1rem;
+  }
+  #rules {
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
+    font-weight: bold;
+    background-color: rgb(255, 216, 155);
+    color: rgb(25, 84, 123);
+  }
+  img {
+    width: 50px;
+    height: auto;
+  }
+  .winmodal {
+    font-size: 1.5rem;
+    width: 150px;
+    transform: scale(0);
+    margin-left: -4.8rem;
+    box-shadow: 2px 6px 30px -10px rgba(0, 0, 0, 0.7);
+  }
+}

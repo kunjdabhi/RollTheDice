@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Roll The Dice</title>
+  </head>
+  <body>
+    <button id="rules" class="btn">RULES</button>
+    <div class="container">
+      <div class="items">
+        <button id="newGame" class="btn">NEW GAME</button>
+        <img src="dice-1.png" alt="1" class="dice" />
+        <button id="roll" class="btn">ROLL DICE</button>
+        <button id="hold" class="btn">HOLD</button>
+      </div>
+      <div class="players">
+        <div class="player-1 active-player">
+          <h1>PLAYER-1</h1>
+          <span id="displayScore1">0</span>
+          <div class="currentScore">
+            <span>CURRENT</span>
+            <span id="currentScore1">0</span>
+          </div>
+        </div>
+        <div class="player-2">
+          <h1>PLAYER-2</h1>
+          <span id="displayScore2">0</span>
+
+          <div class="currentScore">
+            <span>CURRENT</span>
+            <span id="currentScore2">0</span>
+          </div>
+        </div>
+      </div>
+      <div class="rulesmodal">
+        <div class="header">
+          <span>Rules</span>
+          <span id="close">&times;</span>
+        </div>
+        <div class="modalcontent">
+          <ul>
+            <li>~You get 1,dice goes to other player</li>
+            <li>
+              ~if your Current score is higher than 30,HOLD your score in order
+              to win.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="winmodal">
+        <span>Player-1 Won:D</span>
+      </div>
+    </div>
+
+    <div class="overlay overlayActive"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
