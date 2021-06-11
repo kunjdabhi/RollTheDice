@@ -1,6 +1,7 @@
 'use strict'
 
-
+const playerOneName = prompt("Enter Player-1 Name");
+const playerTwoName = prompt("Enter Player-2 Name");
 const dice = document.querySelector('.dice');
 const rollBtn = document.querySelector('#roll');
 const holdBtn = document.querySelector('#hold');
@@ -12,14 +13,20 @@ const rulemodal = document.querySelector('.rulesmodal')
 const overlay = document.querySelector('.overlay')
 const close = document.getElementById('close');
 const winmodal = document.querySelector('.winnerPlayer');
+const name1 = document.getElementById('playerName1')
+const name2 = document.getElementById('playerName2')
 let playerOneCurrScore = document.getElementById("currentScore1");
 let playerTwoCurrScore = document.getElementById("currentScore2");
 let playerOneTotalScore = document.getElementById("displayScore1")
 let playerTwoTotalScore = document.getElementById("displayScore2")
 let score = [0, 0];
 let currScore = [0, 0];
+console.log(playerOneName)
+console.log(playerTwoName)
 
-console.log(playerTwoCurrScore);
+
+name1.textContent = `${playerOneName}`;
+name2.textContent = `${playerTwoName}`;
 
 
 rollBtn.addEventListener('click', () => {
